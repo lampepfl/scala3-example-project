@@ -3,12 +3,12 @@
   */
 object TypeLambdas:
 
-  type T[+X, Y] = Map[Y, X]
+  type M = [X, Y] =>> Map[Y, X]
 
   type Tuple = [X] =>> (X, X)
 
   def test(): Unit =
-    val m: T[String, Int] = Map(1 -> "1")
+    val m: M[String, Int] = Map(1 -> "1")
     println(m)
 
     val tuple: Tuple[String] = ("a", "b")
